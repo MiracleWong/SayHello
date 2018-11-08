@@ -1,0 +1,2 @@
+FLASK_APP=SayHello
+FLASK_ENV=development
