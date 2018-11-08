@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}Say Hello!{% endblock %}</title>
         <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-{#        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" type="text/css">#}
-        {{ bootstrap.load_css() }}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     </head>
     <body>
@@ -35,10 +34,12 @@
             </footer>
         </main>
 
-{#        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>#}
-{#        <script type="text/javascript" src="{{ url_for('static', filename='js/popper.js') }}"></script>#}
-{#        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>#}
-        {{ bootstrap.load_js() }}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/popper.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+        {{ moment.include_moment(local_js=url_for('static', filename='js/moment-with-locales.min.js')) }}
+        {{ moment.locale("zh-cn") }}
     </body>
 </html>
